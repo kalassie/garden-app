@@ -67,7 +67,15 @@ def get_gardening_advice(month):
     return season, advice
 
 
-month = 6  # Still hardcoded - see issue #2
+while True:
+    try:
+        month = int(input("Enter the month number (1-12): "))
+        if 1 <= month <= 12:
+            break
+        else:
+            print("Please enter a number between 1 and 12.")
+    except ValueError:
+        print("Invalid input. Please enter a whole number.")
 season, advice = get_gardening_advice(month)
 
 print(f"Month: {month}")
